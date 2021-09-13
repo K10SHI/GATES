@@ -1,0 +1,48 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1135-g6b127432)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_000001ec58035ad0 .scope module, "OR_2_behavioral" "OR_2_behavioral" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "Y";
+    .port_info 1 /INPUT 1 "A";
+    .port_info 2 /INPUT 1 "B";
+o000001ec58036fb8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001ec57fe6ea0_0 .net "A", 0 0, o000001ec58036fb8;  0 drivers
+o000001ec58036fe8 .functor BUFZ 1, C4<z>; HiZ drive
+v000001ec57fe6c80_0 .net "B", 0 0, o000001ec58036fe8;  0 drivers
+v000001ec57feef00_0 .var "Y", 0 0;
+E_000001ec57fecd70 .event anyedge, v000001ec57fe6c80_0, v000001ec57fe6ea0_0;
+    .scope S_000001ec58035ad0;
+T_0 ;
+    %wait E_000001ec57fecd70;
+    %load/vec4 v000001ec57fe6ea0_0;
+    %pushi/vec4 0, 0, 1;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %load/vec4 v000001ec57fe6c80_0;
+    %pushi/vec4 0, 0, 1;
+    %cmp/e;
+    %flag_get/vec4 4;
+    %and;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001ec57feef00_0, 0, 1;
+    %jmp T_0.1;
+T_0.0 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001ec57feef00_0, 0, 1;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0, $push;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "./OR_GATE.v";
