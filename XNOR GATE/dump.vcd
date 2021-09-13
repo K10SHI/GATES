@@ -1,5 +1,5 @@
 $date
-	Mon Sep 13 18:09:17 2021
+	Mon Sep 13 18:21:07 2021
 $end
 $version
 	Icarus Verilog
@@ -7,11 +7,11 @@ $end
 $timescale
 	1s
 $end
-$scope module AND $end
+$scope module XNOR $end
 $var wire 1 ! Y $end
 $var reg 1 " A $end
 $var reg 1 # B $end
-$scope module Indtance0 $end
+$scope module Instance0 $end
 $var wire 1 " A $end
 $var wire 1 # B $end
 $var reg 1 ! Y $end

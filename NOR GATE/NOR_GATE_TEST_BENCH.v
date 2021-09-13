@@ -1,8 +1,8 @@
-`include "OR_GATE.v"
-module OR;
+`include "NOR_GATE.v"
+module NOR;
 reg A, B;
 wire Y;
-OR_GATE Indtance0 (Y, A, B);
+NOR_GATE Instance0 (Y, A, B);
 initial begin
     A = 0; B = 0;
  #1 A = 0; B = 1;
@@ -15,3 +15,4 @@ initial begin
     $dumpvars();
 end
 endmodule
+

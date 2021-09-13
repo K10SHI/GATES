@@ -1,8 +1,8 @@
-`include "OR_GATE.v"
-module OR;
+`include "NAND_GATE.v"
+module NAND;
 reg A, B;
 wire Y;
-OR_GATE Indtance0 (Y, A, B);
+NAND_GATE Indtance0 (Y, A, B);
 initial begin
     A = 0; B = 0;
  #1 A = 0; B = 1;

@@ -1,5 +1,5 @@
 `include "AND_GATE.v"
-module AND_GATE;
+module AND;
 reg A, B;
 wire Y;
 AND_GATE Indtance0 (Y, A, B);
