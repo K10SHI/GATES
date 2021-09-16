@@ -4,7 +4,7 @@ always @ (A) begin
         Y = 1'b1;                        // then Y has to be 1
     end
     else if (A == 1'b0) begin            //states that if  A is 0
-       Y = 1'b1;                         // then Y has to be 0
+       Y = 1'b0;                         // then Y has to be 0
 end
 end
 endmodule                                //used to terminate the module
